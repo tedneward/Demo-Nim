@@ -9,15 +9,15 @@ echo "Basics"
 # {{## END syntax ##}}
 
 # {{## BEGIN declarations ##}}
-var a: int  # mutable integer, no value explicitly set
-var b = 7   # mutable inferred integer set to 7
+var a: int      # mutable integer, no value explicitly set
+var b = 7       # mutable inferred integer set to 7
 var 
-  c = -11     # mutable inferred integer set to -11
-  d = "Hello" # mutable inferred string set to "Hello"
-  e = '/'     # mutable inferred character set to '/'
+  c = -11       # mutable inferred integer set to -11
+  d = "Hello"   # mutable inferred string set to "Hello"
+  e = '/'       # mutable inferred character set to '/'
+var f1, f2 = 37 # mutable inferred integer set to variables
 
 const g = 35    # immutable integer set to compile-time value  
-
 var k = 27
 let j = 2 * k   # immutable integer set to runtime value
 # {{## END declarations ##}}
