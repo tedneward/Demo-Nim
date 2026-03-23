@@ -12,9 +12,9 @@ echo "Basics"
 var a: int  # mutable integer, no value explicitly set
 var b = 7   # mutable inferred integer set to 7
 var 
-    c = -11     # mutable inferred integer set to -11
-    d = "Hello" # mutable inferred string set to "Hello"
-    e = '/'     # mutable inferred character set to '/'
+  c = -11     # mutable inferred integer set to -11
+  d = "Hello" # mutable inferred string set to "Hello"
+  e = '/'     # mutable inferred character set to '/'
 
 const g = 35    # immutable integer set to compile-time value  
 
@@ -32,40 +32,36 @@ var nd = float(5)
 # {{## END numbers ##}}
 
 # {{## BEGIN strings-and-chars ##}}
-let sa = "Hello"
+var sa = "Hello"
 let sb = sa & "\nworld\n"
 let sr = r"Hello\tworld"    # raw string: "Hello        world"
 sa.add(" the world")
 echo "The sa string equals", sa
 
 let
-  i = 'a'
-  j = 'd'
-
-echo i < j
+  ci = 'a'
+  cj = 'd'
+echo ci < cj
 
 let
-  m = "axyb"
-  n = "axyz"
-  o = "ba"
-  p = "ba "
-
-echo m < n  
-echo n < o  
-echo o < p  
+  sm = "axyb"
+  sn = "axyz"
+  so = "ba"
+  sp = "ba "
+echo sm < sn  
+echo sn < so  
+echo so < sp  
 # {{## END strings-and-chars ##}}
 
 # {{## BEGIN booleans ##}}
 let
-  g = 31
-  h = 99
+  rg = 31
+  rh = 99
 
-echo "g is greater than h: ", g > h
-echo "g is smaller than h: ", g < h
-echo "g is equal to h: ", g == h
-echo "g is not equal to h: ", g != h
-echo "g is greater or equal to h: ", g >= h
-echo "g is smaller or equal to h: ", g <= h
+echo "rg is greater than rh: ", rg > rh
+echo "rg is smaller than rh: ", rg < rh
+echo "rg is equal to rh: ", rg == rh
+echo "rg is not equal to rh: ", rg != rh
 
 echo "T and T: ", true and true
 echo "T or F: ", true or false

@@ -8,6 +8,14 @@ A simple "hello world" program
 A collection of 
 
 ## composite
+Arrays, sequences, tuples
 
 ## procedures
+
+## objects
+
+## ffi
+
+## macros
+
 
