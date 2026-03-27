@@ -6,6 +6,11 @@ echo "Basics"
 #[ This is
     a multiline
     comment ]#
+
+# var and let are both keywords but here we use them as identifiers
+var `var` = 42
+let `let` = 8
+assert `var` + `let` == 50
 # {{## END syntax ##}}
 
 # {{## BEGIN declarations ##}}
@@ -20,6 +25,7 @@ var f1, f2 = 37 # mutable inferred integer set to variables
 const g = 35    # immutable integer set to compile-time value  
 var k = 27
 let j = 2 * k   # immutable integer set to runtime value
+let l = 128'i16 # mutable 16-bit integer
 # {{## END declarations ##}}
 
 echo "a: ", a, "\nb: ", b, "\nc: ", c, "\nd: ", d, "\ne: ", e, "\ng: ", g, "\nj: ", j
@@ -32,6 +38,16 @@ var nb3 = (na + 5 - (3 * 2)) mod 3
 var nc = int(5.5)
 var nd = float(5)
 # {{## END numbers ##}}
+
+# {{## BEGIN custom-numbers ##}}
+import std/strutils
+type u4 = distinct uint8 # a 4-bit unsigned integer aka "nibble"
+proc `'u4`(n: string): u4 =
+  # The leading ' is required.
+  result = (parseInt(n) and 0x0F).u4
+
+var x = 5'u4
+# {{## END custom-numbers ##}}
 
 echo na, " ", nb1, " ", nb2, " ", nb3, " ", nc, " ", nd
 

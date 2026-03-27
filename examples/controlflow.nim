@@ -78,3 +78,9 @@ block myblock:
   echo "still in block"
 echo "outside the block"
 # {{## END block ##}}
+
+# {{## BEGIN exception-handling ##}}
+# {{## END exception-handling ##}}
+
+# {{## BEGIN exception-tracking ##}}
+# {{## END exception-tracking ##}}
