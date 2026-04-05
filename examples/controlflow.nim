@@ -84,3 +84,8 @@ echo "outside the block"
 
 # {{## BEGIN exception-tracking ##}}
 # {{## END exception-tracking ##}}
+
+# {{## BEGIN statement-list ##}}
+a = if a > 15: (echo "Big!"; 5) else: 10
+echo a
+# {{## END statement-list ##}}
