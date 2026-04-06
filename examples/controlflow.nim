@@ -26,7 +26,8 @@ case i
     echo "i is even"
   else:
     echo "i is too large"
-
+# {{## END case-1 ##}}
+# {{## BEGIN case-2 ##}}
 var favoriteFood = case animal
   of "dog": "bones"
   of "cat": "mice"
@@ -34,7 +35,7 @@ var favoriteFood = case animal
   else:
     echo "I'm not sure what to serve, but everybody loves ice cream"
     "ice cream"
-# {{## END case ##}}
+# {{## END case-2 ##}}
 echo animal, " likes ", favoriteFood
 
 # {{## BEGIN for ##}}
@@ -80,7 +81,18 @@ echo "outside the block"
 # {{## END block ##}}
 
 # {{## BEGIN exception-handling ##}}
+var f: File
+if open(f, "quote.txt"):
+  try:
+    echo readLine(f)
+  except IOError:
+    echo "IO error!"
+  except CatchableError:
+    echo "Unknown exception!"
+    # reraise the unknown exception:
+    raise
+  except: # catch all other exceptions
+    echo "Other error!"
+  finally:
+    close(f)
 # {{## END exception-handling ##}}
-
-# {{## BEGIN exception-tracking ##}}
-# {{## END exception-tracking ##}}
