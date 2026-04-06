@@ -14,7 +14,7 @@ assert `var` + `let` == 50
 # {{## END syntax ##}}
 
 # {{## BEGIN declarations ##}}
-var a: int      # mutable integer, no value explicitly set
+var a: int      # mutable integer, no value explicitly set (0)
 var b = 7       # mutable inferred integer set to 7
 var 
   c = -11       # mutable inferred integer set to -11
@@ -23,7 +23,7 @@ var
 var f1, f2 = 37 # mutable inferred integer set to variables
 
 const g = 35    # immutable integer set to compile-time value  
-var k = 27
+var k = 27      # mutable inferred integer set to 27 (runtime value)
 let j = 2 * k   # immutable integer set to runtime value
 let l = 128'i16 # mutable 16-bit integer
 # {{## END declarations ##}}
@@ -37,6 +37,7 @@ var nb2 = (na + 5 - (3 * 2)) div 3
 var nb3 = (na + 5 - (3 * 2)) mod 3
 var nc = int(5.5)
 var nd = float(5)
+#var ne = nc + nd  # Error: type mismatch
 # {{## END numbers ##}}
 
 # {{## BEGIN custom-numbers ##}}
