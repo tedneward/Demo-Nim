@@ -21,4 +21,4 @@ task build, "build project":
 
 task clean, "Clean up the project":
     for ex in exampleCode:
-        exec("rm " & ex)
+        exec("rm -f " & ex)
