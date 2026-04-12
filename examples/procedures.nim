@@ -72,6 +72,22 @@ else:
   echo "I think you know what the problem is just as well as I do."
 # {{## END result ##}}
 
+# {{## BEGIN operators ##}}
+# The "UFO" operator, doing all the comparisons at once
+proc `<==>`(lhs, rhs: int): int =
+  if lhs < rhs:
+    result = -1
+  elif lhs > rhs: 
+    result = 1
+  else: 
+    result = 0
+
+echo 5 <==> 6
+echo 7 <==> 6
+echo 6 <==> 6
+echo `<==>`(4, 5)
+# {{## END operators ##}}
+
 # {{## BEGIN no-side-effects ##}}
 
 # {{## END no-side-effects ##}}

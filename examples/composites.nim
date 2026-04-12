@@ -79,6 +79,10 @@ var o = (name: "Banana", weight: 2, rating: 'c')
 o[1] = 7          
 o.name = "Apple"  
 echo o    # (name: "Apple", weight: 7, rating: 'c')
+
+type Fruit = tuple[name: string, weight: int, rating: char]
+var u = (name: "Kumquat", weight: 5, rating: 'f')
+echo u
 # {{## END tuples ##}}
 
 # {{## BEGIN distinct-types ##}}
