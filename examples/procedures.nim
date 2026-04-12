@@ -70,6 +70,8 @@ if yes("Should I delete all your important files?"):
   echo "I'm sorry Dave, I'm afraid I can't do that."
 else:
   echo "I think you know what the problem is just as well as I do."
+
+proc returnsInt(): auto = 1984
 # {{## END result ##}}
 
 # {{## BEGIN operators ##}}
