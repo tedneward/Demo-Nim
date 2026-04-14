@@ -43,3 +43,21 @@ method eval(e: PlusExpr): int = eval(e.a) + eval(e.b)
 
 echo eval(newPlus(newPlus(newLit(1), newLit(2)), newLit(4)))
 # {{## END dynamic-dispatch ##}}
+
+# {{## BEGIN interfaces ##}}
+type IntFieldInterface = object
+    getter: proc (): int
+    setter: proc (x: int)
+
+proc intField(init = 0): IntFieldInterface =
+  var captureMe = init
+  proc getter(): int = result = captureMe
+  proc setter(x: int) = captureMe = x
+  
+  result = IntFieldInterface(getter: getter, setter: setter)
+
+var anInt = intField(12)
+echo anInt.getter()
+anInt.setter(34)
+echo anInt.getter()
+# {{## END interfaces ##}}
