@@ -8,6 +8,11 @@ type Person = object
 
 var ted = Person(first_name: "Ted", last_name: "Neward", age: 55)
 echo ted    # "(first_name: "Ted", last_name: "Neward", age: 55)"
+
+var bono: ref Person
+new(bono)
+bono.first_name = "Bono"
+echo bono[]
 # {{## END basic-syntax ##}}
 
 # {{## BEGIN properties ##}}

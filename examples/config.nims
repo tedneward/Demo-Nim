@@ -6,6 +6,7 @@ let exampleCode = [
     "basics",
     "composites",
     "controlflow",
+    "exceptions",
     "ffic",
     "objects",
     "pointers",
