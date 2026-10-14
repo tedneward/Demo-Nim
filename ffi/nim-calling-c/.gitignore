@@ -1,3 +1,5 @@
 calc
 logic.o
 mylib.a
+time
+simple

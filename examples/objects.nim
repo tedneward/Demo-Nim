@@ -32,6 +32,31 @@ ted.firstName = "Theodore"
 echo ted
 # {{## END properties ##}}
 
+# {{## BEGIN inheritance-1 }}
+type Animal = ref object of RootObj
+  name: string
+  age: int
+method vocalize(self: Animal): string {.base.} = "..."
+method ageHumanYrs(self: Animal): int {.base.} = self.age
+
+type Dog = ref object of Animal
+method vocalize(self: Dog): string = "woof"
+method ageHumanYrs(self: Dog): int = self.age * 7
+
+type Cat = ref object of Animal
+method vocalize(self: Cat): string = "meow"
+# {{## END inheritance-1 ##}}
+
+# {{## BEGIN inheritance-2 }}
+var animals: seq[Animal] = @[]
+animals.add(Dog(name: "Sparky", age: 10))
+animals.add(Cat(name: "Mitten", age: 10))
+
+for a in animals:
+  echo a.vocalize()
+  echo a.ageHumanYrs()
+# {{## END inheritance-2 }}
+
 # {{## BEGIN dynamic-dispatch ##}}
 type
   Expression = ref object of RootObj ## abstract base class for expressions
