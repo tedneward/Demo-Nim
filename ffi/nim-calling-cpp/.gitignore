@@ -1,0 +1,9 @@
+# Compiled artifacts
+cppmain
+nimmain
+nimperson
+*.o
+*.a
+*.so
+*.dylib
+*.exe
