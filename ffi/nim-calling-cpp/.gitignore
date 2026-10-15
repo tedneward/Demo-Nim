@@ -2,6 +2,7 @@
 cppmain
 nimmain
 nimperson
+nimstatic
 *.o
 *.a
 *.so
