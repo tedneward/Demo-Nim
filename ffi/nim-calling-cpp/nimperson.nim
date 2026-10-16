@@ -3,6 +3,7 @@
 # Build & run with:
 #   nim cpp -r nimperson.nim
 
+# {{## BEGIN declarations ##}}
 {.compile: "person.cpp".}
 
 type
@@ -15,7 +16,9 @@ proc newPerson(name: cstring): Person {.importcpp: "Person(@)", constructor.}
 # Methods.
 proc getName(p: Person): cstring {.importcpp: "#.getName().data()".}
 proc setName(p: var Person, name: cstring) {.importcpp: "#.setName(@)".}
+# {{## END declarations ##}}
 
+# {{## BEGIN usage ##}}
 when isMainModule:
   var ted = newPerson("Ted")
   echo "name = ", ted.getName()
@@ -26,3 +29,4 @@ when isMainModule:
   var anon = newPerson()
   anon.setName("Anonymous")
   echo "name = ", anon.getName()
+# {{## END usage ##}}

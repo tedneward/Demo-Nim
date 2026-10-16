@@ -5,6 +5,7 @@
 # Build & run with:
 #   nim cpp -r nimstatic.nim
 
+# {{## BEGIN declarations ##}}
 # Link the prebuilt static library (and rely on the C++ toolchain for -lstdc++).
 {.link: "libperson.a".}
 
@@ -18,6 +19,7 @@ proc newPerson(name: cstring): Person {.importcpp: "Person(@)", constructor.}
 # Methods.
 proc getName(p: Person): cstring {.importcpp: "#.getName().data()".}
 proc setName(p: var Person, name: cstring) {.importcpp: "#.setName(@)".}
+# {{## END declarations ##}}
 
 when isMainModule:
   var ted = newPerson("Ted")
